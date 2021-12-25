@@ -1,0 +1,26 @@
+sudo: required
+
+services:
+  - docker
+
+language: java
+dist: trusty
+
+jdk:
+  - openjdk8
+
+cache:
+  directories:
+    - $HOME/.m2
+
+
+script:
+  - mvn clean package -U
+  - docker build -t mojatretaslika .
+
+
+
+after_success:
+  - docker tag mojatretaslika 2741/mojatretaslika
+  - docker login -u=2741 -p=basicto
+  - docker push 2741/mojatretaslika

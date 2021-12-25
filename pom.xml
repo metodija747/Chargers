@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>si.fri.rso.charging</groupId>
+    <artifactId>Chargers</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>api</module>
+        <module>models</module>
+        <module>services</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <kumuluzee-health.version>2.4.2</kumuluzee-health.version>
+        <kumuluzee-metrics.version>2.3.0</kumuluzee-metrics.version>
+        <kumuluzee-config-mp.version>1.4.1</kumuluzee-config-mp.version>
+        <kumuluzee-cors.version>1.0.6</kumuluzee-cors.version>
+        <kumuluzee.version>3.12.2</kumuluzee.version>
+        <kumuluzee-rest.version>1.5.1</kumuluzee-rest.version>
+        <kumuluzee-config.version>1.3.0</kumuluzee-config.version>
+
+        <postgresql.version>42.3.1</postgresql.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>sonatype-snapshots</id>
+            <name>Sonatype Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+    <dependencies>
+
+    <dependency>
+        <groupId>com.apple</groupId>
+        <artifactId>AppleJavaExtensions</artifactId>
+        <version>1.4</version>
+    </dependency>
+    <dependency>
+        <groupId>com.kumuluz.ee.cors</groupId>
+        <artifactId>kumuluzee-cors</artifactId>
+        <version>${kumuluzee-cors.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>com.kumuluz.ee</groupId>
+        <artifactId>kumuluzee-bom</artifactId>
+        <version>${kumuluzee.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.kumuluz.ee.health</groupId>
+        <artifactId>kumuluzee-health</artifactId>
+        <version>${kumuluzee-health.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.kumuluz.ee.metrics</groupId>
+        <artifactId>kumuluzee-metrics-core</artifactId>
+        <version>${kumuluzee-metrics.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>com.kumuluz.ee.rest</groupId>
+        <artifactId>kumuluzee-rest-core</artifactId>
+        <version>${kumuluzee-rest.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>kumuluzee-config-consul</artifactId>
+        <groupId>com.kumuluz.ee.config</groupId>
+        <version>${kumuluzee-config.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>${postgresql.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>com.kumuluz.ee.config</groupId>
+        <artifactId>kumuluzee-config-mp</artifactId>
+        <version>${kumuluzee-config-mp.version}</version>
+    </dependency>
+        <dependency>
+            <groupId>si.fri.rso.charging</groupId>
+            <artifactId>charger-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>si.fri.rso.charging</groupId>
+            <artifactId>charger-models</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>si.fri.rso.charging</groupId>
+            <artifactId>charger-services</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+    </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

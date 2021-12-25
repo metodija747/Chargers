@@ -1,0 +1,32 @@
+kumuluzee:
+  name: Charging
+  env:
+    name: dev
+  version: 1.0.0
+  server:
+    base-url: http://localhost:8080
+    http:
+      port: 8080
+  datasources:
+    - jndi-name: jdbc/ChargersDS
+      connection-url: jdbc:postgresql://localhost:5432/Chargers
+      username: postgres
+      password: postgres
+  health:
+    checks:
+      data-source-health-check:
+        type: liveness
+        jndi-name: jdbc/ChargersDS
+  metrics:
+    web-instrumentation:
+      - name: metriki
+        url-pattern: /metrics
+
+  cors-filter:
+    servlet:
+      allow-origin: "*"
+rest-properties:
+  external-services:
+    order-service:
+      enabled: true
+  broken: false

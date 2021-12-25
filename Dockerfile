@@ -4,7 +4,7 @@ RUN mkdir /app
 
 WORKDIR /app
 
-ADD ./app/target/charger-api-1.0.0-SNAPSHOT.jar /app
+ADD ./api/target/charger-api-1.0.0-SNAPSHOT.jar /app
 
 EXPOSE 8080
 

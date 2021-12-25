@@ -21,7 +21,10 @@ spec:
             - name: KUMULUZEE_DATASOURCES0_USERNAME
               value: oinesipb
             - name: KUMULUZEE_DATASOURCES0_PASSWORD
-              value: xeS9VeJ67Lv5XEXYd_5_zB33_5_wa7Y-
+              valueFrom:
+                secretKeyRef:
+                  name: hola
+                  key: API_TOKENI
           ports:
             - containerPort: 8080
               name: server

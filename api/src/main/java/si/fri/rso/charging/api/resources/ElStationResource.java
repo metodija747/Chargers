@@ -63,7 +63,7 @@ public class ElStationResource {
     }
 
     @PUT
-    @Path("{chargerId}")
+    @Path("/{chargerId}")
     public Response putComment(@PathParam("chargerId") String chargerId, Chargers charger) {
 
         charger = chargerBean.putCharger(chargerId, charger);

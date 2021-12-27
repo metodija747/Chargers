@@ -18,6 +18,7 @@ import java.util.List;
 @Path("/chargers")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@CrossOrigin(supportedMethods = "GET, POST, HEAD, DELETE, OPTIONS, PUT")
 public class ElStationResource {
 
     @Inject

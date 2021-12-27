@@ -1,6 +1,7 @@
 package si.fri.rso.charging.api.resources;
 
 
+import com.kumuluz.ee.cors.annotations.CrossOrigin;
 import si.fri.rso.charging.models.Chargers;
 import si.fri.rso.charging.services.producers.ChargerBean;
 
@@ -14,6 +15,7 @@ import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
 @RequestScoped
+@CrossOrigin
 @Path("/chargers")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)

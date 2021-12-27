@@ -15,7 +15,6 @@ import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
 @RequestScoped
-@CrossOrigin
 @Path("/chargers")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)

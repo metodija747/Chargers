@@ -30,7 +30,7 @@ public class ChargerBean {
 
     }
 
-    public Chargers getChargers(String ChargerId) {
+    public Chargers getCharger(String ChargerId) {
 
         Chargers chargers = em.find(Chargers.class, ChargerId);
 

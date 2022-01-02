@@ -44,9 +44,9 @@ public class ElStationResource {
     @Path("/{chargerId}")
     @Log
     @Timed
-    public Response getChargers(@PathParam("chargerId") String chargerId) {
+    public Response getCharger(@PathParam("chargerId") String chargerId) {
 
-        Chargers charger = chargerBean.getChargers(chargerId);
+        Chargers charger = chargerBean.getCharger(chargerId);
 
         if (charger == null) {
             return Response.status(Response.Status.NOT_FOUND).build();

@@ -21,10 +21,9 @@ spec:
             - name: KUMULUZEE_DATASOURCES0_USERNAME
               value: oinesipb
             - name: KUMULUZEE_DATASOURCES0_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: credentials
-                  key: API_TOKENI
+              value: eGVTOVZlSjY3THY1WEVYWWRfNV96QjMzXzVfd2E3WS0=
+            - name: KUMULUZEE_CONFIG_CONSUL_AGENT
+              value: http://20.81.14.144:8500
           ports:
             - containerPort: 8080
               name: server

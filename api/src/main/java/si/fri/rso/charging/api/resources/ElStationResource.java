@@ -2,6 +2,9 @@ package si.fri.rso.charging.api.resources;
 
 
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
+import com.kumuluz.ee.logs.cdi.Log;
+import org.eclipse.microprofile.metrics.annotation.Metered;
+import org.eclipse.microprofile.metrics.annotation.Timed;
 import si.fri.rso.charging.models.Chargers;
 import si.fri.rso.charging.services.producers.ChargerBean;
 
@@ -14,6 +17,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
+@Log
 @RequestScoped
 @Path("/chargers")
 @Produces(MediaType.APPLICATION_JSON)
@@ -28,6 +32,7 @@ public class ElStationResource {
     protected UriInfo uriInfo;
 
     @GET
+    @Metered
     public Response getChargers() {
 
         List<Chargers> chargers = chargerBean.getChargers();
@@ -37,6 +42,8 @@ public class ElStationResource {
 
     @GET
     @Path("/{chargerId}")
+    @Log
+    @Timed
     public Response getChargers(@PathParam("chargerId") String chargerId) {
 
         Chargers charger = chargerBean.getChargers(chargerId);
@@ -48,6 +55,8 @@ public class ElStationResource {
         return Response.status(Response.Status.OK).entity(charger).build();
     }
     @POST
+    @Log
+    @Timed
     public Response createCharger(Chargers charger) {
 
         if ((charger.getName() == null || charger.getName().isEmpty()) || (charger.getLocation() == null
@@ -81,6 +90,7 @@ public class ElStationResource {
     }
     @DELETE
     @Path("{chargerId}")
+    @Log
     public Response deleteCustomer(@PathParam("chargerId") String chargerId) {
 
         boolean deleted = chargerBean.deleteCharger(chargerId);

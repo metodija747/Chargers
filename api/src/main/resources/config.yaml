@@ -26,7 +26,5 @@ kumuluzee:
     servlet:
       allow-origin: "*"
 rest-properties:
-  external-services:
-    order-service:
-      enabled: true
+  maintenance-mode: false
   broken: false

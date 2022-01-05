@@ -54,3 +54,7 @@ logs:
 rest-properties:
   maintenance-mode: false
   broken: false
+openapi-mp:
+  servers: http://20.127.141.29/charge
+server:
+  base-url: http://20.127.141.29/charge

@@ -21,7 +21,7 @@ spec:
             - name: KUMULUZEE_DATASOURCES0_USERNAME
               value: oinesipb
             - name: KUMULUZEE_DATASOURCES0_PASSWORD
-              value: eGVTOVZlSjY3THY1WEVYWWRfNV96QjMzXzVfd2E3WS0=
+              value: xeS9VeJ67Lv5XEXYd_5_zB33_5_wa7Y-
             - name: KUMULUZEE_CONFIG_CONSUL_AGENT
               value: http://20.81.14.144:8500
           ports:

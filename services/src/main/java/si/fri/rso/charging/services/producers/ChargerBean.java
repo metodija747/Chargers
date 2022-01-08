@@ -3,7 +3,7 @@ package si.fri.rso.charging.services.producers;
 
 import com.kumuluz.ee.rest.beans.QueryParameters;
 import com.kumuluz.ee.rest.utils.JPAUtils;
-import si.fri.rso.charging.models.Chargers;
+import  si.fri.rso.charging.models.Chargers;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -22,7 +22,7 @@ public class ChargerBean {
     @Inject
     private ChargerBean ChargersBean;
 
-    public List<Chargers> getChargers() {
+    public List <Chargers> getChargers() {
 
         TypedQuery<Chargers> query = em.createNamedQuery("Charger.getAll", Chargers.class);
 

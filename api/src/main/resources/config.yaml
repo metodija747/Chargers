@@ -22,9 +22,9 @@ kumuluzee:
       - name: metriki
         url-pattern: /metrics
 
-logs:
-  config-file: '<?xml version="1.0" encoding="UTF-8"?>
-                          <Configuration name="Charge">
+  logs:
+    config-file: '<?xml version="1.0" encoding="UTF-8"?>
+                          <Configuration name="Chargers">
                               <Appenders>
                                   <Console name="console" target="SYSTEM_OUT">
                                       <PatternLayout pattern="%d %p %marker %m %X %ex %n"/>
@@ -54,3 +54,4 @@ logs:
 rest-properties:
   maintenance-mode: false
   broken: false
+
